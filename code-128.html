@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code-128</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+      body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('background1.jpeg');
+            background-size: cover;
+            color: #333;
+        }
+
+        header {
+            background:#d4313d;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #111;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        form {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: darkred;
+        }
+
+        .barcode-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .barcode-table th {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .barcode-table td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        .barcode-table tr:nth-child(even) {
+          background-color: #f2f2f2;
+        }
+        footer {
+    background-color: #333;
+    color:#feffff;
+    padding: 20px;
+    text-align: center;
+  }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Code-128</h1>
+    </header>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+        <li><a href="upc.html">Universal Product code</a></li>
+        <li><a href="code-128.html">code-128</a></li>
+        <li><a href="code-39.html">Code-39</a></li>
+        <li><a href="datamatrix.html">Data Matrix</a></li>
+        <li><a href="Barcode Generator.html">Generate your code</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Signup</a></li>
+        <li class="search-bar">
+            
+                <form action="#" method="get">
+                    <input type="text" placeholder="Search..." name="search">
+                    <button type="submit">Search</button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Overview of Code-128</h2>
+        <p>Code 128 is a high-density linear barcode symbology defined in ISO/IEC 15417:2007.[1] It is used for alphanumeric or numeric-only barcodes. It can encode all 128 characters of ASCII and, by use of an extension symbol (FNC4), the Latin-1 characters defined in ISO/IEC 8859-1.[citation needed] It generally results in more compact barcodes compared to other methods like Code 39, especially when the texts contain mostly digits. Code 128 was developed by the Computer Identics Corporation in 1981.</p>
+
+        <h2>Specfications</h2>
+        <p>GS1-128 (formerly known as UCC/EAN-128) is a subset of Code 128 and is used extensively worldwide in shipping and packaging industries as a product identification code for the container and pallet levels in the supply chain</p>
+        <p>A Code 128 barcode has seven sections:</p>
+        <ul>
+            <li>Quiet zone.</li>
+            <li>Start symbol.</li>
+            <li>Encoded data.</li>
+            <li>Check symbol (mandatory).</li>
+            <li>Stop symbol.</li>
+            <li>Final bar (often considered part of the stop symbol).</li>
+            <li>Quiet zone.</li>
+        </ul>
+        
+        <h2>Subtypes</h2>
+        <p>Code 128 includes 108 symbols: 103 data symbols, 3 start symbols, and 2 stop symbols. Each symbol consists of three black bars and three white spaces of varying widths. All widths are multiples of a basic "module". Each bar and space is 1 to 4 modules wide, and the symbols are fixed width: the sum of the widths of the three black bars and three white bars is 11 modules.
+            The stop pattern is composed of two overlapped symbols and has four bars. The stop pattern permits bidirectional scanning. When the stop pattern is read left-to-right (the usual case), the stop symbol (followed by a 2-module bar) is recognized. When the stop pattern is read right-to-left, the reverse stop symbol (followed by a 2-module bar) is recognized. A scanner seeing the reverse stop symbol then knows it must skip the 2-module bar and read the rest of the barcode in reverse.
+            Despite its name, Code 128 does not have 128 distinct symbols, so it cannot represent 128 code points directly. To represent all 128 ASCII values, it shifts among three code sets (A, B, C). Together, code sets A and B cover all 128 ASCII characters. Code set C is used to efficiently encode digit strings. The initial subset is selected by using the appropriate start symbol. Within each code set, some of the 103 data code points are reserved for shifting to one of the other two code sets. The shifts are done using code points 98 and 99 in code sets A and B, 100 in code sets A and C and 101 in code sets B and C to switch between them):</p>
+        <ul>
+            <li>128A (Code Set A) - ASCII characters 00 to 95 (0–9, A–Z and control codes), special characters, and FNC 1–4</li>
+            <li>128B (Code Set B) – ASCII characters 32 to 127 (0–9, A–Z, a–z), special characters, and FNC 1–4</li>
+        </ul>
+
+        <header>
+          <img src="code-128.jpg" width="700" height="250">
+      </header>
+      <section class="content">
+        <br>
+          <h2>Additional Images</h2>
+          <div class="image-container">
+              <img src="code-1.jpg" width="400" height="250">
+              <p>Image: A GS1-128 barcode encoding GTIN, best before date and batch number.</p>
+          </div>
+          <div class="image-container">
+              <img src="code 2.png" width="400" height="250">
+              <p>Image: Schematic of a barcode (Code 128B).</p>
+          </div>
+      </section>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

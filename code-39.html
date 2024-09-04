@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code-39</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+      body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('background1.jpeg');
+            background-size: cover;
+            color: #333;
+        }
+
+        header {
+            background:#d4313d;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #111;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        form {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: darkred;
+        }
+
+        .barcode-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .barcode-table th {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .barcode-table td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        .barcode-table tr:nth-child(even) {
+          background-color: #f2f2f2;
+        }
+        footer {
+    background-color: #333;
+    color:#feffff;
+    padding: 20px;
+    text-align: center;
+  }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Code-39</h1>
+    </header>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="upc.html">Universal Product code</a></li>
+        <li><a href="code-128.html">code-128</a></li>
+        <li><a href="code-39.html">Code-39</a></li>
+        <li><a href="datamatrix.html">Data Matrix</a></li>
+        <li><a href="Barcode Generator.html">Generate your code</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Signup</a></li>
+        <li class="search-bar">
+            
+            <form action="#" method="get">
+                <input type="text" placeholder="Search..." name="search">
+                <button type="submit">Search</button>
+            </form>
+        </li>
+      </ul>
+    </nav>
+    <div class="container">
+        <h2>Overview of Code-39</h2>
+        <p>Code 39 (also known as Alpha39, Code 3 of 9, Code 3/9, Type 39, USS Code 39, or USD-3) is a variable length, discrete barcode symbology defined in ISO/IEC 16388:2007.
+            The Code 39 specification defines 43 characters, consisting of uppercase letters (A through Z), numeric digits (0 through 9) and a number of special characters (-, ., $, /, +, %, and space). An additional character (denoted '*') is used for both start and stop delimiters. Each character is composed of nine elements: five bars and four spaces. Three of the nine elements in each character are wide (binary value 1), and six elements are narrow (binary value 0).
+            The barcode scheme does not contain a check digit (in contrast to—for instance—Code 128), but it can be considered self-checking on the grounds that a single erroneously interpreted bar cannot generate another valid character. Possibly the most serious drawback of Code 39 is its low data density: It requires more space to encode data in Code 39 than, for example, in Code 128. This means that very small goods cannot be labeled with a Code 39 based barcode. However, Code 39 is still used by some postal services (although the Universal Postal Union recommends using Code 128 in all cases[1]), and can be decoded with virtually any barcode reader. One advantage of Code 39 is that since there is no need to generate a check digit, it can easily be integrated into an existing printing system by adding a barcode font to the system or printer and then printing the raw data in that font.
+            Code 39 was developed by Dr. David Allais and Ray Stevens of Intermec in 1974. Their original design included two wide bars and one wide space in each character, resulting in 40 possible characters. Setting aside one of these characters as a start and stop pattern left 39 characters, which was the origin of the name Code 39.[2] Four punctuation characters were later added, using no wide bars and three wide spaces, expanding the character set to 43 characters. Code 39 was later standardised as ANSI MH 10.8 M-1983 and MIL-STD-1189.[3] MIL-STD-1189 has been cancelled and replaced by ANSI/AIM BC1/1995, Uniform Symbology Specification — Code 39.</p>
+
+        <h2>Encoding</h2>
+        <p>The * character presented below is not a true encodable character, but is the start and stop symbol for Code 39. The asymmetry of the symbol allows the reader to determine the direction of the barcode being scanned. This code is traditionally mapped to the * character in barcode fonts and will often appear with the human-readable representation alongside the barcode.</p>
+        <p>Code 39 is sometimes used with an optional modulo 10 or 43 check digit. Using it requires this feature to be enabled in the barcode reader. The code with check digit is referred to as Code 39 mod 10 or Code 39 mod 43 respectively.:</p>
+        <ul>
+            <li>Take the value (0 through 42) of each character in the barcode excluding start and stop codes.</li>
+            <li>Sum the values.</li>
+            <li>Divide the result by 10 (for Mod 10 check digit) or by 43 (for Mod 43 check digit).</li>
+            <li>The remainder is the value of the checksum character to be appended.</li>
+        </ul>
+        
+        <h2>Software</h2>
+        <p>The following free and open source software can produce Code 39 barcodes:</p>
+        <ul>
+            <li>GNU Barcode</li>
+            <li>Zint and Libzint</li>
+        </ul>
+
+        <header>
+          <img src="code-2.png" width="700" height="250">
+      </header>
+      <section class="content">
+        <br>
+          <h2>Additional Images</h2>
+          <div class="image-container">
+              <img src="code-39.jpg" width="400" height="250">
+              <p>Image: Code 39 characters</p>
+          </div>
+      </section>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

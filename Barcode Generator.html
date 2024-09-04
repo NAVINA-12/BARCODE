@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcode Generator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <!-- Bootstrap CSS for styling (optional) -->
+     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+     <!-- Custom CSS -->
+    <style>
+      body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('background1.jpeg');
+            background-size: cover;
+            color: #333;
+        }
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        #barcode {
+            margin-top: 20px;
+        }
+
+        header {
+            background:#d4313d;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #111;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        form {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: darkred;
+        }
+
+        .barcode-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .barcode-table th {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .barcode-table td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        .barcode-table tr:nth-child(even) {
+          background-color: #f2f2f2;
+        }
+        footer {
+    background-color: #333;
+    color:#feffff;
+    padding: 20px;
+    text-align: center;
+  }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Barcode Generator</h1>
+    </header>
+    <nav class="main-nav">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="upc.html">Universal Product code</a></li>
+        <li><a href="code-128.html">code-128</a></li>
+        <li><a href="code-39.html">Code-39</a></li>
+        <li><a href="datamatrix.html">Data Matrix</a></li>
+        <li><a href="Barcode Generator.html">Generate your code</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Signup</a></li>
+        <li class="search-bar">
+        
+            <form action="#" method="get">
+                <input type="text" placeholder="Search..." name="search">
+                <button type="submit">Search</button>
+            </form>
+        </li>
+    </ul>
+</nav>
+    <div class="container">
+        <h1 class="text-center">Barcode Generator</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="barcode-input">Enter Text for Barcode:</label>
+                    <input type="text" id="barcode-input" class="form-control" placeholder="Enter text">
+                </div>
+                <button id="generate-barcode" class="btn btn-primary btn-block">Generate Barcode</button>
+                <div id="barcode" class="text-center"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const generateBarcodeButton = document.getElementById('generate-barcode');
+            const barcodeInput = document.getElementById('barcode-input');
+            const barcodeDiv = document.getElementById('barcode');
+
+            generateBarcodeButton.addEventListener('click', () => {
+                const inputValue = barcodeInput.value;
+                if (inputValue) {
+                    // Clear previous barcode
+                    barcodeDiv.innerHTML = '';
+                    // Create a new SVG element for the barcode
+                    const barcodeSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                    barcodeDiv.appendChild(barcodeSvg);
+                    // Generate the barcode
+                    JsBarcode(barcodeSvg, inputValue, {
+                        format: "CODE128",
+                        lineColor: "#000",
+                        width: 2,
+                        height: 100,
+                        displayValue: true
+                    });
+                } else {
+                    alert('Please enter text to generate a barcode.');
+                }
+            });
+        });
+    </script>
+    </body>
+    </html>
+
+

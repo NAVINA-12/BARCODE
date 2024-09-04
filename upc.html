@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Product code</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+      body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('background1.jpeg');
+            background-size: cover;
+            color: #333;
+        }
+
+        header {
+            background:#d4313d;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #111;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        form {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: darkred;
+        }
+
+        .barcode-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .barcode-table th {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .barcode-table td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        .barcode-table tr:nth-child(even) {
+          background-color: #f2f2f2;
+        }
+        footer {
+    background-color: #333;
+    color:#feffff;
+    padding: 20px;
+    text-align: center;
+  }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Universal Product code</h1>
+    </header>
+    <nav class="main-nav">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="upc.html">Universal Product code</a></li>
+        <li><a href="code-128.html">code-128</a></li>
+        <li><a href="code-39.html">Code-39</a></li>
+        <li><a href="datamatrix.html">Data Matrix</a></li>
+        <li><a href="Barcode Generator.html">Generate your code</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Signup</a></li>
+        <li class="search-bar">
+        
+            <form action="#" method="get">
+                <input type="text" placeholder="Search..." name="search">
+                <button type="submit">Search</button>
+            </form>
+        </li>
+    </ul>
+</nav>
+
+    <div class="container">
+        <h2>Overview of Universal Product code</h2>
+        <p>The Universal Product Code (UPC or UPC code) is a barcode symbology that is used worldwide for tracking trade items in stores.
+            The chosen symbology has bars (or spaces) of exactly 1, 2, 3, or 4 units wide each; each decimal digit to be encoded consists of two bars and two spaces chosen to have a total width of 7 units, in both an "even" and an "odd" parity form, which enables being scanned in either direction. Special "guard patterns" (3 or 5 units wide, not encoding a digit) are intermixed to help decoding.
+            A UPC (technically, a UPC-A) consists of 12 digits that are uniquely assigned to each trade item. The international GS1 organisation assigns the digits used for both the UPC and the related International Article Number (EAN) barcode. UPC data structures are a component of Global Trade Item Numbers (GTINs) and follow the global GS1 specification, which is based on international standards. Some retailers, such as clothing and furniture, do not use the GS1 system, instead using other barcode symbologies or article number systems. Some retailers use the EAN/UPC barcode symbology, but do not use a GTIN for products sold only in their own stores.</p>
+
+        <h2>History</h2>
+        <p>Wallace Flint proposed an automated checkout system in 1932 using punched cards. Bernard Silver and Norman Joseph Woodland, a graduate student from Drexel Institute of Technology, developed a bull's-eye-style code and applied for the patent in 1949.[3][4]
+
+            In the 1960s and early 1970s, railroads in North America experimented with multicolor bar codes for tracking railcars, but this system was eventually abandoned[5] and replaced with a radio-based system called Automatic Equipment Identification (AEI).
+            In 1973, a group of trade associations from the grocery industry formed the Uniform Product Code Council (UPCC) which, with the help of consultants Larry Russell and Tom Wilson of McKinsey & Company, defined the numerical format that formed the basis of the Uniform Product Code.[6] Technology firms including Charegon, IBM, Litton-Zellweger, Pitney Bowes-Alpex, Plessey-Anker, RCA, Scanner Inc., Singer, and Dymo Industries/Data General, put forward alternative proposals for symbol representations to the council.[citation needed] The Symbol Selection Committee finally chose to implement the IBM proposal designed by George J. Laurer, but with a slight modification to the font in the human readable area.[citation needed]
+            The first UPC-marked item ever to be scanned at a retail checkout was a 10-pack (50 sticks) of Wrigley's Juicy Fruit chewing gum, purchased at the Marsh supermarket in Troy, Ohio, at 8:01 a.m. on 26 June 1974.[7] The NCR cash register rang up 67 cents.[8] The shopping cart also contained other barcoded items but the gum was the first one picked up at the checkout. A facsimile of the gum packet went on display at the Smithsonian Institution's American history museum in Washington, D.C.[9][10]
+            Murray Eden was a consultant on the team that created the Universal Product Code barcode.[11][12] As Chairman of a committee of scientists at the Massachusetts Institute of Technology, he helped "select a symbol that would endure the inevitable rush of technology that lay ahead."[13] He chose the font, and he came up with the idea to add numbers to the bottom, which is a fail-safe system, in case the barcode reader is not working correctly.</p>
+        <ul>
+            <li>UPC-C is a 12-digit code with a product code and a check digit; not in common use.</li>
+            <li>UPC-D is a variable length code (12 digits or more) with the 12th digit being the check digit. These versions are not in common use..</li>
+            <li>UPC-E is a 6-digit code, that has its equivalent in UPC-A 12-digit code with number system 0 or 1.</li>
+        </ul>
+        
+        <h2>Composition</h2>
+        <p>Each UPC-A barcode consists of a scannable strip of black bars and white spaces above a sequence of 12 numerical digits. No letters, characters or other content of any kind may appear on a UPC-A barcode. There is a one-to-one correspondence between 12-digit number and strip of black bars and white spaces, i.e. there is only one way to represent each 12-digit number visually and there is only one way to represent each strip of black bars and white spaces numerically.</p>
+        <ul>
+            <li>The scannable area of every UPC-A barcode follows the pattern SLLLLLLMRRRRRRE, where S (start), M (middle), and E (end) guard patterns are represented the same way on every UPC-A barcode and the L (left) and R (right) sections collectively represent the 12 numerical digits that make each UPC-A unique. The first digit L indicates a particular number system to be used by the following digits.</li>
+            <li>The last digit R is an error detecting check digit, that allows some errors to be detected in scanning or manual entry. The guard patterns separate the two groups of six numerical digits and establish the timing.</li>
+        </ul>
+
+        <header>
+          <img src="upc2.png" width="700" height="250">
+      </header>
+      <section class="content">
+        <br>
+          <h2>Additional Images</h2>
+          <div class="image-container">
+              <img src="UPC3.png" width="400" height="250">
+              <p>Image: The UPC Label showing the general characteristics of Baumeister's proposals.</p>
+          </div>
+          <div class="image-container">
+              <img src="UPC4.png" width="400" height="250">
+              <p>Image: UPC-AUPC-A 042100005264 is equivalent to UPC-E 425261 with the "EOEEOO" parity pattern, which is defined by UPC-A number system 0 and UPC-A check digit 4.</p>
+          </div>
+          <div class="image-container">
+              <img src="UPC5.png" width="400" height="250">
+              <p>Image: UPC-E 042100005264 is equivalent to UPC-E 425261 with the "EOEEOO" parity pattern, which is defined by UPC-A number system 0 and UPC-A check digit 4.</p>
+          </div>
+      </section>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Matrix</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('background1.jpeg');
+            background-size: cover;
+            color: #333;
+        }
+
+        header {
+            background:#d4313d;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #111;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        form {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: darkred;
+        }
+
+        .barcode-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .barcode-table th {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .barcode-table td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        .barcode-table tr:nth-child(even) {
+          background-color: #f2f2f2;
+        }
+        footer {
+    background-color: #333;
+    color:#feffff;
+    padding: 20px;
+    text-align: center;
+  }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Data Matrix</h1>
+    </header>
+    <nav class="main-nav">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="upc.html">Universal Product code</a></li>
+        <li><a href="code-128.html">code-128</a></li>
+        <li><a href="code-39.html">Code-39</a></li>
+        <li><a href="datamatrix.html">Data Matrix</a></li>
+        <li><a href="Barcode Generator.html">Generate your code</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Signup</a></li>
+        <li class="search-bar">
+        
+            <form action="#" method="get">
+                <input type="text" placeholder="Search..." name="search">
+                <button type="submit">Search</button>
+            </form>
+        </li>
+    </ul>
+</nav>
+
+    <div class="container">
+        <h2>Overview of Data Matrix</h2>
+        <p>A Data Matrix is a two-dimensional code consisting of black and white "cells" or dots arranged in either a square or rectangular pattern, also known as a matrix. The information to be encoded can be text or numeric data. Usual data size is from a few bytes up to 1556 bytes. The length of the encoded data depends on the number of cells in the matrix. Error correction codes are often used to increase reliability: even if one or more cells are damaged so it is unreadable, the message can still be read. A Data Matrix symbol can store up to 2,335 alphanumeric characters.
+             Data Matrix symbols are rectangular, usually square in shape and composed of square "cells" which represent bits. Depending on the coding used, a "light" cell represents a 0 and a "dark" cell is a 1, or vice versa. Every Data Matrix is composed of two solid adjacent borders in an "L" shape (called the "finder pattern") and two other borders consisting of alternating dark and light "cells" or modules (called the "timing pattern"). Within these borders are rows and columns of cells encoding information. The finder pattern is used to locate and orient the symbol while the timing pattern provides a count of the number of rows and columns in the symbol. As more data is encoded in the symbol, the number of cells (rows and columns) increases. Each code is unique. Symbol sizes vary from 10×10 to 144×144 in the new version ECC 200, and from 9×9 to 49×49 in the old version ECC 000 – 140.</p>
+
+        <h2>Applications</h2>
+        <p>The most popular application for Data Matrix is marking small items, due to the code's ability to encode fifty characters in a symbol that is readable at 2 or 3 mm2 (0.003 or 0.005 sq in) and the fact that the code can be read with only a 20% contrast ratio.[1] A Data Matrix is scalable; commercial applications exist with images as small as 300 micrometres (0.012 in) (laser etched on a 600-micrometre (0.024 in) silicon device) and as large as a 1 metre (3 ft) square (painted on the roof of a boxcar). Fidelity of the marking and reading systems are the only limitation. The US Electronic Industries Alliance (EIA) recommends using Data Matrix for labeling small electronic components.</p>
+        <ul>
+            <li>Data Matrix codes are becoming common on printed media such as labels and letters. The code can be read quickly by a barcode reader which allows the media to be tracked, for example when a parcel has been dispatched to the recipient.</li>
+            <li>For industrial engineering purposes, Data Matrix codes can be marked directly onto components, ensuring that only the intended component is identified with the data-matrix-encoded data. </li>
+            <li>The codes can be marked onto components with various methods, but within the aerospace industry these are commonly industrial ink-jet, dot-peen marking, laser marking, and electrolytic chemical etching (ECE). These methods give a permanent mark which can last up to the lifetime of the component.</li>
+            <li>After component enters service, the Data Matrix code can then be read by a reader camera, which decodes the Data Matrix data which can then be used for a number of purposes, such as movement tracking or inventory stock checks.</li>
+        </ul>
+        
+        <h2>Food industry</h2>
+        <p>Data Matrix codes are used in the food industry in autocoding systems to prevent food products being packaged and dated incorrectly. Codes are maintained internally on a food manufacturers database and associated with each unique product, e.g. ingredient variations. For each product run the unique code is supplied to the printer. Label artwork is required to allow the 2D Data Matrix to be positioned for optimal scanning. For black on white codes testing isn't required unless print quality is an issue, but all color variations need to be tested before production to ensure they are readable.</p>
+        <ul>
+            <li>In May 2006 a German computer programmer, Bernd Hopfengärtner, created a large Data Matrix in a wheat field (in a fashion similar to crop circles). The message read "Hello, World!".[4] In June 2011 the Parisian tattoo artist K.A.R.L., as part of a promotion for Ballantine's scotch whisky,[5] created the world's first animated tattoo utilizing a Data Matrix code in a collaborative process streamed live on Facebook.</li>
+        </ul>
+
+        <header>
+          <img src="Datamatrix.png" width="700" height="350">
+      </header>
+      <section class="content">
+        <br>
+          <h2>Additional Images</h2>
+          <div class="image-container">
+              <img src="data matrix1.png" width="400" height="250">
+              <p>Image:Marking surfaces</p>
+          </div>
+          <div class="image-container">
+            <img src="data matrix2.png" width="400" height="250">
+            <p>Image:An example of a Data Matrix code, encoding the text</p>
+        </div>
+      </section>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
